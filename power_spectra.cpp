@@ -139,6 +139,7 @@ void calc_power_spectrum_sa(const int nc, const float boxsize, const float delta
     }
   }
 
+  printf("# Density - velocity power spectra\n");
   printf("# Column 1: k\n");
   printf("# Column 2: nmode\n");
   printf("# Column 3: Pgg(k)\n");
@@ -254,7 +255,7 @@ void calc_momentum_power_sa(const int nc, const float boxsize, const float delta
     }
   }
 
-  printf("# momentum power spectrum\n");
+  printf("# Density - momentum power spectra\n");
   printf("# Column 1: k\n");
   printf("# Column 2: nmode\n");
   printf("# Column 3: Pgg(k)\n");

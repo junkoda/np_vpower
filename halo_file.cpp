@@ -4,6 +4,7 @@
 
 #include <iostream>
 #include <vector>
+#include <limits>
 #include <cstdio>
 #include <cstdlib>
 #include <cmath>
@@ -44,8 +45,12 @@ void read_fof_text(const char filename[], vector<ParticleData>& v,
   // Column 5-7: v[3]  halo velocities [km/s]
 
   ParticleData p;
-  const float M_min= pow(10.0f, logMmin);
-  const float M_max= pow(10.0f, logMmax);
+
+  // logMin logMax specifies the subset of haloes
+  // Reads all haloes if m=0.
+  const float M_min= m > 0.0f ? pow(10.0f, logMmin) : 0.0f;
+  const float M_max= m > 0.0f ? pow(10.0f, logMmax) : 
+                                                  numeric_limits<float>::max();
 
   FILE* fp= fopen(filename, "r");
   if(fp == 0) {

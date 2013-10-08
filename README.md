@@ -19,9 +19,54 @@ or you can disable using comandline options by setting
 
        $ make
 
-4. This package also includes a code to calculate momentum power spectrum.
+4. Run. This code reads Gadget binary file
 
-       $ make momentum_power
+       $ ./np_vpower --gadget-file snp > vpower.txt
+
+where `snp` is the name of the snapshot file. Modify `read_fof_text`
+function in `halo_file.cpp` to read your own files of dark matter
+particles or haloes.
+
+## Command-line Options
+You can change the parameters by setting command-line options
+
+       $ ./np_vpower [options] <filename>
+
+* --nc=128   : Set the number of grids for the Fourier Transform.
+* --dk=0.01  : Set dk to change output k binning
+* --kmax=1.0 : Set kmax to fix the value of maximum k in the output
+
+The code calculates power spectra in real space by default. Set
+
+* --reddshift-space
+
+for power spectra in redshift space.
+
+The code also calculates momentum power spectrum:
+
+* --momentum-power
+
+Simulation parameters are read from Gadget file, but if you read FoF
+halo data from an ascii file, you need to give simulation boxsize,
+
+* --boxsize=1000 : Box size in [/h Mpc]
+
+You also need cosmological parameters for the redshift-space
+distortions for FoF data,
+
+* --omegam=0.273
+
+which assumes flat LambdaCDM (omega_lambda= 1 - omegam).
+
+You can select haloes in a mass range, log10(M) in [logMmin, logMmax], using,
+
+* --m=7.5e11       : Particle mass
+* --logMmin=1.0e12 : in 1/h Solar mass
+* --logMmax=1.0e13
+
+See a brief description of options by running the code without arguments,
+
+       $ ./np_vpower
 
 
 ## Authors
@@ -30,7 +75,7 @@ This code is written by Jun Koda.
 1. Koda et al. 2013, *Are peculiar velocity surveys competitive as a
 cosmological probe?*, in preparation.
 
-Please reference this paper (when available) if you use this code for
+Please reference this paper (when it become available) if you use this code for
 scientific works.
 
 ## Licence

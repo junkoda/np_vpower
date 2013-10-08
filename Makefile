@@ -12,9 +12,14 @@ CXX       ?= g++
 BOOST_DIR ?= /opt/local
 FFTW3_DIR ?= #/Users/junkoda/opt/gcc/fftw3/fftw-3.3.3  # for example
 
+#
 # Compile options
+# USE_BOOST_PROGRAM_OPTIONS = 0
+#   Program parameters are hard coded in np_vpower.cpp
+# USE_BOOST_PROGRAM_OPTIONS = 1
 #   Allows you to change parameter in command line rather than hard-coded values
 #   Boost library is required
+#
 USE_BOOST_PROGRAM_OPTIONS = 1
 
 DIR_PATH = $(BOOST_DIR) $(FFTW3_DIR)
@@ -63,25 +68,11 @@ nearest_nbr_mesh.o: nearest_nbr_mesh.cpp particle.h gadget_file2.h \
   binary_tree.h nbr_finder.h kth_value.h fft_mesh.h nearest_nbr_mesh.h
 np_vpower.o: np_vpower.cpp particle.h gadget_file2.h halo_file.h \
   fft_mesh.h nearest_nbr_mesh.h power_spectra.h transformation.h \
-  density_mesh.h
+  density_mesh.h Makefile
 power_spectra.o: power_spectra.cpp histogram.h power_spectra.h
 transformation.o: transformation.cpp transformation.h particle.h \
   gadget_file2.h
 
-
-#
-# Momentum Power spectrum (optional)
-#
-OBJS2 := momentum_power.o
-OBJS2 += fft_mesh.o halo_file.o histogram.o power_spectra.o 
-OBJS2 += transformation.o density_mesh.o
-
-momentum_power: $(OBJS2)
-	$(CXX) $(OBJS2) $(LIBS1) -o $@
-
-momentum_power.o: momentum_power.cpp particle.h gadget_file2.h \
-  halo_file.h fft_mesh.h nearest_nbr_mesh.h power_spectra.h \
-  transformation.h density_mesh.h
 
 .PHONY: clean
 clean :
