@@ -146,7 +146,7 @@ void calc_power_spectrum_sa(const int nc, const float boxsize, const float delta
   printf("# Column 5: Puu(k)\n");
   printf("# Column 6: Pgg(k) without shotnoise/alias correction\n");
   printf("# Column 7: Pgu(k) without alias correction\n");
-  printf("# Column 8: Puu(k) without alias correction\n")
+  printf("# Column 8: Puu(k) without alias correction\n");
 
   for(int j=0; j<Pgg.numbin(); ++j) {
     if(Pgg.n(j) > 0)
@@ -262,7 +262,7 @@ void calc_momentum_power_sa(const int nc, const float boxsize, const float delta
   printf("# Column 5: Ppp(k)\n");
   printf("# Column 6: Pgg(k) without shotnoise/alias correction\n");
   printf("# Column 7: Pgp(k) without alias correction\n");
-  printf("# Column 8: Ppp(k) without alias correction\n")
+  printf("# Column 8: Ppp(k) without alias correction\n");
 
   for(int j=0; j<Pgg.numbin(); ++j) {
     if(Pgg.n(j) > 0)

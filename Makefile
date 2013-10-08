@@ -49,8 +49,6 @@ OBJS1 += halo_file.o transformation.o
 LIBS1  = $(LIBS) -lfftw3f
 
 np_vpower: $(OBJS1)
-	echo $(USE_BOOST_PROGRAM_OPTIONS)
-	echo $(CXXFLAGS)
 	$(CXX) $(OBJS1) $(LIBS1) -o $@
 
 # g++ -MM *.cpp
