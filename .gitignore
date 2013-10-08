@@ -1,13 +1,6 @@
-# Compiled Object files
-*.slo
-*.lo
+*~
+#*#
 *.o
+np_vpower
+momentum_power
 
-# Compiled Dynamic libraries
-*.so
-*.dylib
-
-# Compiled Static libraries
-*.lai
-*.la
-*.a
