@@ -61,8 +61,8 @@ which assumes flat LambdaCDM (omega_lambda= 1 - omegam).
 You can select haloes in a mass range, log10(M) in [logMmin, logMmax], using,
 
 * --m=7.5e11       : Particle mass
-* --logMmin=1.0e12 : in 1/h Solar mass
-* --logMmax=1.0e13
+* --logMmin=12.0   : log10[Mmin/(1/h Solar mass)]
+* --logMmax=13.0
 
 See a brief description of options by running the code without arguments,
 
@@ -73,12 +73,10 @@ See a brief description of options by running the code without arguments,
 This code is written by Jun Koda.
 
 1. Koda et al. 2013, *Are peculiar velocity surveys competitive as a
-cosmological probe?*, in preparation.
+cosmological probe?*, MNRAS submitted,
+[arXiv:1312.1022](http://arxiv.org/abs/1312.1022).
 
-Please reference this paper (when it become available) if you use this code for
-scientific works.
+Please reference this paper if you use this code for scientific works.
 
 ## Licence
 This code is distributed under the GPLv3 license.
-
-
