@@ -101,9 +101,9 @@ index_t BinaryTree::sort_particle(const index_t particle_begin,
   int j2= particle_end-1;
   
   while(1) {
-    while(particle[j1].x[i] < mid && j1 < particle_end)
+    while(j1 < particle_end && particle[j1].x[i] < mid)
       ++j1;
-    while(particle[j2].x[i] >= mid && j2 >= particle_begin)
+    while(j2 >= particle_begin && particle[j2].x[i] >= mid)
       --j2;
     if(j1 < j2) {
       const ParticleData temp= particle[j1];
