@@ -73,10 +73,13 @@ See a brief description of options by running the code without arguments,
 This code is written by Jun Koda.
 
 1. Koda et al. 2013, *Are peculiar velocity surveys competitive as a
-cosmological probe?*, MNRAS submitted,
+cosmological probe?*,
+MNRAS, **445**, 4267
+[NASA ADS](http://adsabs.harvard.edu/abs/2014MNRAS.445.4267K)
 [arXiv:1312.1022](http://arxiv.org/abs/1312.1022).
 
 Please reference this paper if you use this code for scientific works.
 
 ## Licence
 This code is distributed under the GPLv3 license.
+
